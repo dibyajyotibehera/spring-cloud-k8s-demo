@@ -1,0 +1,7 @@
+
+spring:
+    application.name: spring-cloud-k8s-demo
+    cloud.kubernetes.reload.enabled: true
+messageProp: local prop
+server:
+    port: 8082
