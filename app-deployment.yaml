@@ -62,3 +62,17 @@ spec:
                         protocol: TCP
                   resources: {}
 
+---
+kind: Service
+apiVersion: v1
+metadata:
+    name: spring-cloud-k8s-demo-svc
+spec:
+    ports:
+        - name: http
+          port: 8080
+          targetPort: 8080
+          protocol: TCP
+    selector:
+        app: spring-cloud-k8s-demo-dep
+    type: LoadBalancer
