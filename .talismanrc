@@ -1,0 +1,8 @@
+fileignoreconfig:
+- filename: Dockerfile
+  checksum: a0d408ebea3aaf8c8e59b2e22cd295987546d343564dfc6af57b5d2a1c21b080
+- filename: app-deployment.yaml
+  checksum: b6cce3792510e4d88ba266395685dfcb98044b8df76fe329818b460b577c8b39
+- filename: build.gradle
+  checksum: 867b51e1b5f4ad52b08cd8ee67bedbbd64cf05ea6e8ea4ef235e44a8c3c94f84
+version: "1.0"

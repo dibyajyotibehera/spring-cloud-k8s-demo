@@ -31,8 +31,11 @@ kind: ConfigMap
 metadata:
     name: spring-cloud-k8s-demo
 data:
-    application.properties: |-
-        messageProp=k8s config map
+    application.yaml: |-
+        messageProp: k8s config map7
+        spring:
+            config:
+                    import: aws-secretsmanager:test-secret
 
 ---
 apiVersion: apps/v1

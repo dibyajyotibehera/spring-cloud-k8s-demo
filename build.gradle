@@ -13,11 +13,30 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter'
-    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
+    implementation "org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}"
+    implementation "org.springframework.boot:spring-boot-starter-validation:${springBootVersion}"
+    implementation "org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}"
+    implementation "org.springframework.boot:spring-boot-starter-security:${springBootVersion}"
+    implementation "org.springframework.cloud:spring-cloud-starter-sleuth:${springCloudStarterSleuthVersion}"
+    implementation ("org.opensearch.client:opensearch-rest-high-level-client:${openSearchClientVersion}") {
+        exclude (group: "org.apache.logging.log4j", module: "log4j-core")
+    }
+    implementation "org.flywaydb:flyway-core:${flywayCoreVersion}"
+    implementation "org.springdoc:springdoc-openapi-ui:${springdocOpenapiUiVersion}"
+    implementation "org.apache.logging.log4j:log4j-api:${log4jVersion}"
+    implementation "org.apache.logging.log4j:log4j-to-slf4j:${log4jVersion}"
+//    implementation "io.awspring.cloud:spring-cloud-starter-aws-secrets-manager-config:${secretsManagerConfigVersion}"
+    implementation "com.amazonaws:aws-java-sdk-sts:${javaSdkSTSVerion}"
+    implementation "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}"
+    implementation "org.apache.tomcat.embed:tomcat-embed-websocket:${tomcatVersion}"
+    implementation "org.modelmapper:modelmapper:${modelmapperVersion}"
+//    implementation 'org.springframework.boot:spring-boot-starter'
+//    implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.cloud:spring-cloud-starter-kubernetes-client-config:2.1.1'
-
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'io.awspring.cloud:spring-cloud-starter-aws-secrets-manager-config:2.3.2'
+    implementation "com.amazonaws:aws-java-sdk-sts:1.12.131"
+//    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 tasks.named('test') {
